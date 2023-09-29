@@ -1,10 +1,10 @@
-const User = require('../models/User.js'); // Import your Mongoose model
+const User = require('../models/User.js');
 const Channel = require('../models/Channel.js')
+const dotenv = require('dotenv');
+dotenv.config({ path: __dirname + '/./../../.env' });
 const mongoose = require('../../config/database.js');
 const bcrypt = require('bcrypt');
 const faker = require('faker');
-const dotenv = require('dotenv');
-dotenv.config({ path: __dirname + '/./../../.env' });
 
 const { SEED_VALUE, USERS_SEED_COUNT, CHANNELS_SEED_COUNT } = process.env
 faker.seed(+SEED_VALUE);

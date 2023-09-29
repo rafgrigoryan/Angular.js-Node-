@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-
-const dbURI = 'mongodb+srv://test_task_user:Ttask@cluster0.rknelzj.mongodb.net/?retryWrites=true&w=majority';
+const { MONGO_USERNAME, MONGO_PASSWORD } = process.env
+const dbURI = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.rknelzj.mongodb.net/?retryWrites=true&w=majority`;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
