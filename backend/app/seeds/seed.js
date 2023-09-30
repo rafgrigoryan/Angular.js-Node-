@@ -58,7 +58,6 @@ async function randomChannels(count) {
     return channelsArray;
 }
 
-// Seed the database
 async function seedDatabase() {
     try {
         const seedUsers = await randomUsers(+USERS_SEED_COUNT)

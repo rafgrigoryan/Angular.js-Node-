@@ -23,9 +23,10 @@ const getMessages = async (req, res) => {
 
 const createMessage = async (req, res) => {
     const userId = req.user._id
+    const username = req.user.username
     const { toUser, toChannel, message } = req.body
     try {
-        const data = await messageService.createMessage(userId, toUser, toChannel, message);
+        const data = await messageService.createMessage(username, userId, toUser, toChannel, message);
         res.status(200).json(data);
     } catch (error) {
         res.status(404).json({ data: null, error: true, message: 'Error Creating Message' });

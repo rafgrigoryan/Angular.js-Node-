@@ -44,7 +44,7 @@ const refreshTokens = async (refreshToken) => {
         const JwtSecret = process.env.JWT_SECRET
         const decoded = jwt.verify(refreshToken, JwtSecret);
 
-        const currentTimestamp = Math.floor(Date.now() / 1000); // Current timestamp in seconds
+        const currentTimestamp = Math.floor(Date.now() / 1000); 
         if (decoded.exp && decoded.exp >= currentTimestamp) {
             const accessToken = jwt.sign({ userId: decoded.userId }, JwtSecret, {
                 expiresIn: '1h',
