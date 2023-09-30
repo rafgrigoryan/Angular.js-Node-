@@ -8,9 +8,9 @@ const getChannels = async (userId) => {
             .exec();
 
         return {
-            data: { channels },
+            data: channels,
             error: false,
-            message: 'Logged in Successfully'
+            message: 'Channels List Recieved'
         };
 
     } catch (error) {
