@@ -44,7 +44,7 @@ const getUserMessages = async (userId, companionId) => {
 
 const createMessage = async (username, userId, toUser, toChannel, message) => {
     try {
-        await Message.create({
+        const created = await Message.create({
             content: message,
             from: userId,
             toUser,
@@ -52,7 +52,7 @@ const createMessage = async (username, userId, toUser, toChannel, message) => {
         });
 
         return {
-            data: { content: message, from: { username } },
+            data: { _id: created._id, content: message, from: { username } },
             error: false,
             message: 'Message Created'
         };

@@ -18,7 +18,8 @@
                 <h2>Channels</h2>
                 <ul>
                     <li ng-repeat="channel in channels">
-                        <a ng-href="/#!/main/channel/{{ channel._id }}" ng-click="selectChannel(channel)">{{ channel.name }}</a>
+                        <a ng-href="/#!/main/channel/{{ channel._id }}" ng-click="selectChannel(channel)">{{
+                            channel.name }}</a>
                     </li>
                 </ul>
             </div>
@@ -34,7 +35,20 @@
         <div class="main-content">
             <div class="conversation">
                 <div ng-repeat="message in messages">
-                    <p><strong>{{ message.from.username }}:</strong> {{ message.content }}</p>
+                    <p><strong>{{ message.from.username }}:</strong> {{ message.content }}
+                        <input ng-model="message.editContent" ng-if="message.editing">
+                        <button ng-click="editMessage(message)"
+                            ng-if="isMessageFromCurrentUser(message) && !message.editing"
+                            class="edit-button">Edit</button>
+                        <button ng-click="saveMessage(message)"
+                            ng-if="isMessageFromCurrentUser(message) && message.editing"
+                            class="save-button">Save</button>
+                        <button ng-click="cancelEdit(message)"
+                            ng-if="isMessageFromCurrentUser(message) && message.editing"
+                            class="cancel-button">Cancel</button>
+                        <button ng-if="isMessageFromCurrentUser(message) && !message.editing"
+                            ng-click="deleteMessage(message)" class="delete-button">Delete</button>
+                    </p>
                 </div>
             </div>
             <div class="message-input">

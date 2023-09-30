@@ -26,7 +26,7 @@ body {
     font-size: 16px;
     margin: 0;
     padding: 5px 0;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #555555;
 }
 
 .channels ul,
@@ -85,3 +85,35 @@ body {
 .message-input button:hover {
     background-color: #005a9f;
 }
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button.save-button {
+    background-color: #4CAF50;
+  }
+  
+  button.save-button:hover {
+    background-color: #45a049;
+  }
+  
+  button.cancel-button {
+    background-color: #f44336;
+  }
+  
+  button.cancel-button:hover {
+    background-color: #d32f2f;
+  }

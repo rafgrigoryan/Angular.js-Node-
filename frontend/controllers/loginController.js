@@ -8,6 +8,8 @@ angular.module('myApp')
 
       $http.post('http://localhost:3000/login', { username: username, password: password })
         .then(function (response) {
+          sessionStorage.removeItem('username');
+          sessionStorage.setItem('username', JSON.stringify(username));
           AuthService.setTokens(response.data.data.accessToken, response.data.data.refreshToken);
           $window.location.href = '#!/main'
           console.log('Login successful');

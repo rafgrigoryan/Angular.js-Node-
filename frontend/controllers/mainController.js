@@ -40,6 +40,54 @@ app
       $scope.newMessage = '';
     };
 
+    $scope.isMessageFromCurrentUser = function (message) {
+      let currentUserUsername = JSON.parse(sessionStorage.getItem('username'));
+      return message.from.username === currentUserUsername; // Replace with your username check
+    };
+
+    $scope.editMessage = function (message) {
+      message.editing = true;
+      message.editContent = message.content; // Initialize the edit content with the current content
+    };
+
+    $scope.saveMessage = function (message) {
+      $http({
+        method: 'PUT',
+        url: `http://localhost:3000/message/${message._id}`,
+        data: { message: message.editContent },
+        headers: {
+          'Authorization': 'Bearer ' + accessToken
+        }
+      }).then(function (response) {
+        console.log('Edited Successfully')
+        message.content = message.editContent;
+      }).catch(function (error) {
+        console.error('Failed to Edit Message:', error);
+      });
+      message.editing = false;
+    };
+
+    $scope.cancelEdit = function (message) {
+      message.editing = false;
+    };
+
+    $scope.deleteMessage = function (message) {
+      $http({
+        method: 'DELETE',
+        url: `http://localhost:3000/message/${message._id}`,
+        headers: {
+          'Authorization': 'Bearer ' + accessToken
+        }
+      }).then(function (response) {
+        $scope.messages = $scope.messages.filter(item => item._id !== message._id)
+        console.log('Deleted Successfully')
+
+      }).catch(function (error) {
+        console.error('Failed to Delete message:', error);
+      });
+    };
+
+
     $http({
       method: 'GET',
       url: 'http://localhost:3000/channels',

@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "33b7cf60-b06e-4864-967a-8926f2b0f7e3",
+		"name": "test_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23888981"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Rollin11\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjU3MTMsImV4cCI6MTY5Njg4OTcxM30.DvtJsDWsNS9LoWL3DLH-37FnKC_3Nbc8JUi84mJ4wiM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/refreshTokens",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"refreshTokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Channels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjU4OTQsImV4cCI6MTY5NjAyOTQ5NH0.lcHjmPCaHo5fgBBoENrY890q0I2H_OAV8Wk6TEUJ5Qo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/channels",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjU4OTQsImV4cCI6MTY5NjAyOTQ5NH0.lcHjmPCaHo5fgBBoENrY890q0I2H_OAV8Wk6TEUJ5Qo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Channel messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjk5OTksImV4cCI6MTY5NjAzMzU5OX0.W0_5ygGGtR-bCBiGAL39ONUTm0X-SM0npxRel20_Z6I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/messages/channel?channelId=6517189bf31f7e6a79137355",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"channel"
+					],
+					"query": [
+						{
+							"key": "channelId",
+							"value": "6517189bf31f7e6a79137355"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjk5OTksImV4cCI6MTY5NjAzMzU5OX0.W0_5ygGGtR-bCBiGAL39ONUTm0X-SM0npxRel20_Z6I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/messages/user?companionId=65171898f31f7e6a79137333",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"user"
+					],
+					"query": [
+						{
+							"key": "companionId",
+							"value": "65171898f31f7e6a79137333"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjk5OTksImV4cCI6MTY5NjAzMzU5OX0.W0_5ygGGtR-bCBiGAL39ONUTm0X-SM0npxRel20_Z6I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"toChannel\":\"6517189bf31f7e6a79137355\", \r\n    \"message\":\"Hey Budy !\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/message",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjk5OTksImV4cCI6MTY5NjAzMzU5OX0.W0_5ygGGtR-bCBiGAL39ONUTm0X-SM0npxRel20_Z6I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"Buy Myy Budy !\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/message/6517626b3bfbc994a9b62161",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"6517626b3bfbc994a9b62161"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE3MTg5OGYzMWY3ZTZhNzkxMzczMzYiLCJpYXQiOjE2OTYwMjk5OTksImV4cCI6MTY5NjAzMzU5OX0.W0_5ygGGtR-bCBiGAL39ONUTm0X-SM0npxRel20_Z6I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/message/6517639aae8ce4d2bd9aaddf",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"message",
+						"6517639aae8ce4d2bd9aaddf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

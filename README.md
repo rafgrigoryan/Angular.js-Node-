@@ -35,6 +35,12 @@ Before you run the backend, make sure you have the following dependencies instal
 
 The backend should now be running. You can access it via `http://localhost:your-backend-port`.
 
+### Postman Collection
+
+You can find a Postman collection for testing the API in the `backend/docs` directory. Import the collection into Postman to test your API endpoints.
+
+**Note**: Don't forget to rename the `.env.example` file to `.env` in the backend directory to configure your environment settings properly.
+
 ## Frontend
 
 ### Prerequisites
