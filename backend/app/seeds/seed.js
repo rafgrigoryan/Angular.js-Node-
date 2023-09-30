@@ -1,8 +1,8 @@
-const User = require('../models/User.js');
-const Channel = require('../models/Channel.js')
+const User = require('../models/User');
+const Channel = require('../models/Channel')
 const dotenv = require('dotenv');
 dotenv.config({ path: __dirname + '/./../../.env' });
-const mongoose = require('../../config/database.js');
+const mongoose = require('../../config/database');
 const bcrypt = require('bcrypt');
 const faker = require('faker');
 

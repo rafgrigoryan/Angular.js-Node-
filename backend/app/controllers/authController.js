@@ -6,18 +6,18 @@ const login = async (req, res) => {
         const data = await authService.authenticateUser(username, password);
         res.status(200).json(data);
     } catch (error) {
-        res.status(401).json({ error: 'Authentication failed' });
+        res.status(401).json({ data: null, error: true, message: 'Authentication failed' });
     }
 };
 
 const refreshTokens = async (req, res) => {
-    const { username, password } = req.body
+    const { refreshToken } = req.body
     try {
-        const data = await authService.refreshTokens(username, password);
+        const data = await authService.refreshTokens(refreshToken);
         res.status(200).json(data);
     } catch (error) {
-        res.status(401).json({ error: 'Refresh Token Failed' });
+        res.status(401).json({ data: null, error: true, message: 'Refreshing Token Failed' });
     }
 };
 
-module.exports = { login,refreshTokens }
+module.exports = { login, refreshTokens }
